@@ -9,18 +9,59 @@
 % Dynamically sized mid bar.
 \newcommand{\bigmid}{\mathrel{\Big|}}
 
-
 % ---- Colors and Notes ----
-\definecolor{dblue}{RGB}{98, 140, 190}
-\definecolor{dlblue}{RGB}{216, 235, 255}
-\definecolor{dgreen}{RGB}{124, 155, 127}
-\definecolor{dpink}{RGB}{207, 166, 208}
-\definecolor{dyellow}{RGB}{255, 248, 199}
-\definecolor{dgray}{RGB}{46, 49, 49}
+\definecolor{dblue}{RGB}{140, 212, 251}
+\definecolor{dlblue}{RGB}{79, 142, 230}
+\definecolor{dgray}{RGB}{205, 204, 204}
+\definecolor{dred}{RGB}{239, 133, 125}
+\definecolor{dorange}{RGB}{230, 169, 132}
 
 % TODO
-\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
-\newcommand{\dnote}[1]{\textcolor{dblue}{Dave: #1}}
+\newcounter{WenhaoDefCounterTodo}
+\setcounter{WenhaoDefCounterTodo}{1}
+
+\newcommand{\remark}[2]
+{
+\begin{mdframed}[roundcorner=1pt, backgroundcolor=dblue]
+\vspace{1mm}
+{\bf Remark \theWenhaoDefCounterTodo} {\it #1}
+\stepcounter{WenhaoDefCounterTodo}
+\end{mdframed}
+}
+
+% NOTE
+\newcounter{WenhaoDefCounterNote}
+\setcounter{WenhaoDefCounterNote}{1}
+
+\newcommand{\note}[2]
+{
+\begin{mdframed}[roundcorner=1pt, backgroundcolor=dred]
+\vspace{1mm}
+{\bf Note \theWenhaoDefCounterNote} {\it #1}
+\stepcounter{WenhaoDefCounterNote}
+\end{mdframed}
+}
+
+% Idea
+\newcounter{WenhaoDefCounterIdea}
+\setcounter{WenhaoDefCounterIdea}{1}
+
+\newcommand{\idea}[2]
+{
+\begin{mdframed}[roundcorner=1pt, backgroundcolor=dorange]
+\vspace{1mm}
+{\bf Idea \theWenhaoDefCounterIdea} {\it #1}
+\stepcounter{WenhaoDefCounterIdea}
+\end{mdframed}
+}
+
+% theorems
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{assumption}{Assumption}
+\newtheorem{mov}{Motivation}
 
 % URL
 \newcommand{\durl}[1]{\textcolor{dblue}{\underline{\url{#1}}}}
@@ -131,9 +172,3 @@
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
 
-\newtheorem{conjecture}{Conjecture}[section]
-\newtheorem{remark}{Remark}[section]
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{assumption}{Assumption}

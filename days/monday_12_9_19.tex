@@ -1,0 +1,125 @@
+The conference begins! The first day is mostly workshop events.
+
+\subsection{Workshop: Machine learning on Big Data}
+
+\subsubsection{Transpose-based integrated data reduction techinques for speeding up classifier training}
+
+{\bf Point 1:} Use feature selection methods (e.g., CFS, INFOGAIN, CHI-SQUARE) to select instance by transpose the matrix.\\
+
+\remark{ The idea in this paper does not make sense to me. What if you have a small feature space and large instance sample size, i.e., $\mathbb{R}^{M \times N}$, where $M$ is large, and $N$ is small. The transpose matrix will be $\mathbb{R}^{N \times M}$ and your training sample will be insufficient for learning the parameters.}
+
+\subsubsection{Reconstruction of agents' corrupted trajectories collective motion using low-rank matrix completion}
+
+\ddef{Collective motion}{the collective motion trajectories of n agents. e.g., sheep usually travel in group}
+
+Missingness might be observed in the trajectory matrix. Author use low-rank matrix completion to deal with the missingness. He also proves that collective motion is low rank.\\
+
+$\ra$ Essentially this is a data imputation problem and can be approached using matrix factorization. \\
+
+$\ra$ Authors haven't identify a real-world application yet. \\
+
+\subsubsection{RecCite: A Hybrid Approach Recommend Potential Papers}
+
+This paper uses all meta-data (e.g., age of publication) of a paper and citation relations to recommend to users.\\
+
+Paper uses community detection to form clusters of users who are more related to each other (e.g., math community, computer science community, etc.). This greatly reduce the search space, hence scalability. 
+
+\subsubsection{Parallel gradient boosting based granger causality learning}
+
+\ddef{Granger causality}{Find the cause-effect relations in time series data}
+
+Here is a tutorial on how to do a granger causality test: \url{https://www.statisticshowto.datasciencecentral.com/granger-causality/}\\
+
+\note{This might be something related to temporal causality since granger causality test mines causal relations in time series data.}
+
+\spacerule
+
+\subsection{Workshop on Big Data Analytic Technology for Bioinformatics and Health Informatics}
+
+\subsubsection{Explainable Deep Learning Applied to Understanding Opioid Use Disorder and Its Risk Factors}
+
+\begin{itemize}
+    \item Opiod Use Disorder (OUD) in veterans 
+    \item logistic regression assumes independence among variables whereas DL doesn't have this issue.
+\end{itemize}{}
+
+\ddef{Impact assessment}{Calculate the feature importance used in the deep learning models}
+
+The goal of this study is to develop a DL model for OUD prediction.
+
+\begin{itemize}
+    \item ReLU, Adam optimizer, 7 layers. 0.009 dropout
+    \item 4\% OUD diagnosis (outcome).
+    \item AUC comparison: DL:0.87, Logistic regression: 0.72
+\end{itemize}{}
+
+$\ra$ Impact scores in deep learning is comparable to correlation in conventional ways.
+
+\subsubsection{Towards Explainable Melanoma Diagnosis: Prediction of Clinical Indicators Using semi-supervised and multi-task learning}
+
+\ddef{Melanoma}{the most aggressive form of skin cancer}
+
+The issue with melanoma is that the diagnosis is subjective and difficult.\\
+
+This paper uses two dataset, e.g,  Indicator-dataset (226 samples) and Melanoma/Nevus datasets (9124 samples). This is where the multi-task learning can help. Since the two task of indicator-dataset and melanoma/nevus share some commonality, the model trained using Melanoma can help the model using Indicator-dataset. 
+
+\idea{how can we incorporate multi-task learning in our breast cancer}
+
+\subsubsection{Computer-Aided Clinical Skin Disease Diagnosis Using CNN and Object Detection Models}
+
+skin disease diagnosis in certain areas is expensive and usually is not accessible. So machine learning/deep learning can help in detecting skin diseases.\\
+
+Use existing DL classifiers to test on their dataset and develop their own DL model: They tested 4 different DL models and later ensemble them as a new DL model.\\
+
+\note{Object detection/region of interest can help diagnosis since certain ROI are relatively small in the images. With the ROIs labeled, we focus our classification only on the interested region.}\\
+
+$\ra$ Ensemble strategy: linear summation (avg. predict\_prob?).
+
+\idea{for the cardinal dataset/FPG dataset, can we use ensemble strategy with multiple classifiers?}
+
+\subsubsection{Automated Machine Learning for EEG-Based Classification of Parkinson's Disease Patients}
+
+$\ra$ Identify the high/poor cognition
+
+$\ra$ Feature selection algo: Boruta algorithm \cite{kursa2010feature}
+
+\subsubsection{Recurrent Neural Network Based Feature selection for High Dimensional and Low Sample size Micro-array Data}
+
+{\bf Issue}
+\begin{itemize}
+    \item Data sparsity, many 0s in the matrix
+    \item High dimension, but only small portion of features correlate with target.
+\end{itemize}
+
+$\ra$ Inspired by paper \cite{liu2017deep}, the proposed method extends to recurrent neural network.
+
+\subsubsection{Baysian Non-linear Support Vector Machine for High-dimensional Data}
+
+\mov{Current SVMs assume 1) linear separation, 2) independence between features, which are usually not true in medical settings.}\\
+
+$\ra$ contribution: 1) incorporate knowledge graph into the prior distribution in beysian inference. 2) more interpretable path analysis from the knowledge graph.\\
+
+$\ra$ graphs converts into adjacency matrix, which is easier to be incorporated into the prediction model.\\
+
+\subsubsection{Predicting Post-stroke Hospital Discharge Disposition Using Interpretable Machine Learning Approaches}
+
+$\ra$ de-mythologize the black-box of machine learnings.
+
+$\ra$ Data: 130,000 data samples with ICD9 code.
+
+$\ra$ The proposed method, LIME, pick a subset of the dataset and try to change the value of the features and see how does the change affect the predictions. In Scikit-learn, feature selection is done using the whole dataset. But LIME uses only a small subset of it which is ``representative" of the whole population. In other words, the subset has the close degree of variety as the population.
+
+\remark{This might be why the algorithm could be scalable in large dataset.}
+
+\subsubsection{Exploiting Anti-Monotonic Constraint for Mining Palindromic Motifs from Big Genomic Data}
+
+\mov{Existing methods such as dynamic programming for mining panlidromic motifs demands high computational resources (e.g., memory and time)}\\
+
+$\ra$ proposed method handles with high volume of genomic data efficiently in parallel.\\
+
+$\ra$ runs on Apache Spark\\
+
+$\ra$ exploit anti-monotonic constraint: if a sub-sequence is not a palindromic mortifs (PM), then the super-sequence is not a PM.
+
+\spacerule
+

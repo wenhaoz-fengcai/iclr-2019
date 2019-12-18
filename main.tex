@@ -14,9 +14,9 @@
 % -- Commands --
 \input{commands}
 
-\title{ICLR 2019 Notes \\ \Large{New Orleans, LA, USA}}
-\author{David Abel\footnote{\durl{http://david-abel.github.io}} \\ \durl{david_abel@brown.edu}}
-\date{May 2019}
+\title{IEEE BigData 2019 Notes \\ \Large{Los Angeles, CA, USA}}
+\author{Wenhao Zhang\footnote{\durl{http://wenhaoz.io}} \\ \durl{wenhaoz@ucla.edu}}
+\date{Dec 2019}
 
 \begin{document}
 \maketitle
@@ -24,62 +24,73 @@
 \newpage
 
 
-This document contains notes I took during the events I managed to make it to at (my first) ICLR, in New Orleans, LA, USA. Please feel free to distribute it and shoot me an email at \durl{david_abel@brown.edu} if you find any typos or other items that need correcting. 
-
 
 \section{Conference Highlights}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=140mm]{images/wordcloud.png}
+    \caption{Trending research keywords in IEEE BigData 2019}
+    \label{fig:my_label}
+\end{figure}{}
 
-Sadly, I missed more talks than normal this conference (and had to fly out a bit early so I missed a good chunk of Thursday). Some highlights:
+This is the summary of conference highlights and my take-aways:
+
 \begin{itemize}
-    \item Lots of continued discussion following the recent wave of conversations around Rich Sutton's bitter lesson\footnote{\url{http://incompleteideas.net/IncIdeas/BitterLesson.html}}. The debate held at the main conference track (see Section~\ref{sec:debate}) and the panel at the SPiRL workshop\footnote{\url{http://spirl.info}} (see Section~\ref{sec:panel}) featured lots of insights about the topic -- highly recommended to check them out!
-    \item The SPiRL workshop was {\it outstanding}. The speaker lineup, contributed talks, and panel were all exceptional (see Section~\ref{sec:spirl}). A huge thanks to the organizers for putting on such a great event.
-    \item Hot topics: 1) Meta learning is very popular (particularly meta RL), and 2) Graph neural networks.
-    \item Favorite talks: I loved the keynotes! I didn't make it to all of them but the ones I did catch were all fantastic. Definitely check out Prof. Zeynep Tufekci's amazing talk if you can find a video (my summary is in Section~\ref{sec:keynote_zeynep}). If I happen to find a recording I'll link it here.
-    \item Some really nice papers in learning abstraction/hierarchies in RL: 1) ``Near-Optimal Representation Learning for Hierarchical Reinforcement Learning" by \citet{nachum2018near}, and 2) ``Learning Multi-Level Hierarchies with Hindsight" by \citet{levy2018learning}; and ``Learning Finite State Representations of Recurrent Policy Networks' by~\citet{koul2018learning}.
-    \item A small thing, but I *loved* how large the poster were allowed to be (something like 5ft wide). Encouraged some great designs and easy viewing for the onlookers, even from a distance.
-\end{itemize}
+    \item One quick take-away from this conference is that we can use ensemble learning combining different classifiers for FPG data analysis and Cardinal data analysis
+    \item Federated learning is a very good research topic and there are many low hanging fruit. It's very useful in medical data analysis. Mayo clinic is also on this research topic. See section \ref{section: keynote1} for more info.
+    \item The poster session is good, see section \ref{section:poster}
+    \item Google has proposed a good dataset repo, {\bf DataCommons}, which I think is a better alternative to UCI machine learning repo. See section \ref{section:datacommmons}
+    \item One paper talking about temporal causality, granger causality on Monday, interesting paper.
+    \item Multi-task learning is gaining a lot of attention in medical + deep learning research.
+    \item There are papers researching on EEG-based classification of Parkinson's disease
+    \item This year, IEEE BigData conference has a lot of paper on deep learning.
+    \item Wait for the conference proceedings coming out and we can read more details in the papers we are interested in.
+    \item Potential Internship with Mayo Clinic and Potential collaboration with Mayo Clinic (Andrew Wen)
 
-% ------------
-% -- Sunday --
-% ------------
-\newpage
-\section{Monday May 6th: Workshops}
-\input{days/monday_5_6_19.tex}
+    
+\end{itemize}{}
 
 
+
+% \dblockquote{test}
+
+% \todo{teset}
+
+% \dnote{note}
 
 % ------------
 % -- Monday --
 % ------------
 \newpage
-\section{Tuesday May 7th: Main Conference}
-\input{days/tuesday_5_7_19.tex}
-
-
+\section{Monday Dec 9th, 2019: Main Conference}
+\input{days/monday_12_9_19.tex}
 
 % ------------
 % -- Tuesday --
 % ------------
 \newpage
-\section{Wednesday May 8th: Main Conference}
-\input{days/wednesday_5_8_19.tex}
+\section{Tuesday Dec 10th, 2019: Main Conference}
+\input{days/tuesday_12_10_19.tex}
 
-
-
-% ---------------
+% ------------
 % -- Wednesday --
-% ---------------
+% ------------
 \newpage
-\section{Thursday May 9th: Main Conference}
-\input{days/thursday_5_9_19.tex}
+\section{Wednesday Dec 11th, 2019: Main Conference}
+\input{days/wednesday_12_11_19.tex}
 
-
+% ------------
+% -- Thursday --
+% ------------
+\newpage
+\section{Thursday Dec 12th, 2019: Main Conference}
+\input{days/thursday_12_12_19.tex}
 
 
 
 % --- Bibliography ---
 \newpage
 \bibliographystyle{plainnat}
-\bibliography{iclr}
+\bibliography{bigdata2019}
 
 \end{document}
